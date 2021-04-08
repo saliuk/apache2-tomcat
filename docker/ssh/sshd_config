@@ -1,0 +1,20 @@
+Port 2021
+ListenAddress 0.0.0.0
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+SyslogFacility AUTH
+PubkeyAuthentication yes
+AuthorizedKeysFile %h/.ssh/authorized_keys 
+PasswordAuthentication no
+PermitEmptyPasswords no
+PermitRootLogin no
+
+ChallengeResponseAuthentication no
+
+UsePAM yes
+
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+
+Subsystem       sftp    /usr/lib/openssh/sftp-server
